@@ -1,0 +1,22 @@
+server:
+  port: 443
+  ssl:
+    enabled: true
+    key-alias: sso
+    key-store: certificate/sso.keystore
+    key-store-password: ssosso
+    key-store-type: JKS
+
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .html
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+    check-template-location: true

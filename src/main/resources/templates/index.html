@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebSocket Security</title>
+</head>
+
+<body>
+
+WeSocket Security Demo, press F12...
+
+<script>
+        var Chat = {};
+        if (Chat.websocket === undefined) {
+            Chat.websocket = new WebSocket("wss://localhost/echo");
+        }
+        Chat.websocket.onopen = function () {
+            console.log('Info: WebSocket connection opened.');
+        };
+
+        Chat.websocket.onclose = function () {
+            console.log('Info: WebSocket closed.');
+        };
+
+        Chat.websocket.onmessage = function (message) {
+            console.log('Messages:' + message.data);
+        };
+
+
+
+
+</script>
+</body>
+
+</html>
